@@ -5,8 +5,10 @@
 }
 
 :root {
-    --bg-clr: #191919;
-    --txt-clr:#D4D4D4;
+    --bg-clr: #2d3250;
+    --txt-clr:#f9b17a;
+    --sec-clr: #424769;
+    --ter-clr: #676f9d;
 }
 
 html, body {
@@ -41,6 +43,13 @@ body {
     border-radius: 2rem;
     border: 3px solid var(--txt-clr);
     flex-flow: column wrap;
+    background-color: var(--ter-clr);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 
 #search-box {
@@ -49,6 +58,8 @@ body {
     border: 0;
     padding: 1rem;
     font: inherit;
+    background-color: var(--sec-clr);
+    color: white;
 
 }
 
@@ -58,8 +69,10 @@ body {
     border-radius: 10px;
     border: 0;
     font: inherit;
-    color: var(--bg-clr);
+    color: white;
     cursor: pointer;
+    background-color: var(--txt-clr);
+
 }
 
 #footer {
@@ -69,7 +82,11 @@ body {
     align-items: center;
     height: 40px;
     width: 100%;
-    background-color: var(--txt-clr);
-    color: var(--bg-clr);
+    background-color: var(--ter-clr);
+    color: var(--txt-clr);
     gap: .5em;
+}
+
+#link {
+    color: inherit;
 }
