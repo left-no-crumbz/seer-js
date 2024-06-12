@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seer</title>
     <link href="./css/styles.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     
@@ -23,5 +24,9 @@
     </footer>
 
 </body>
-<script src="./js/app.js" crossorigin="anonymous"></script>
+<script src="./js/app.js">
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./js/service-worker.js")
+    }
+</script>
 </html>

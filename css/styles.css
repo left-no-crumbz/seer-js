@@ -5,10 +5,10 @@
 }
 
 :root {
-    --bg-clr: #2d3250;
-    --txt-clr:#f9b17a;
-    --sec-clr: #424769;
-    --ter-clr: #676f9d;
+    --bg-clr: #323437;
+    --txt-clr: white;
+    --sec-clr: #323437;
+    --ter-clr: #E2B714;
 }
 
 html, body {
@@ -41,9 +41,9 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    border: 3px solid var(--txt-clr);
+    border: 3px solid var(--ter-clr);
     flex-flow: column wrap;
-    background-color: var(--ter-clr);
+    background-color: var(--bg-clr);
 }
 
 .title {
@@ -58,7 +58,7 @@ body {
     border: 0;
     padding: 1rem;
     font: inherit;
-    background-color: var(--sec-clr);
+    background-color: var(--txt-clr);
     color: white;
 
 }
@@ -71,7 +71,7 @@ body {
     font: inherit;
     color: white;
     cursor: pointer;
-    background-color: var(--txt-clr);
+    background-color: var(--ter-clr);
 
 }
 
