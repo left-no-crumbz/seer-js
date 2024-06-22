@@ -6,27 +6,11 @@
     <title>Seer</title>
     <link href="./css/styles.css" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
 </head>
 <body>
-    
-    <div class="container">
-        <form class="card">
-            <div class="title">
-                <h1>Seer</h1>
-            </div>
-            <label for="search-box"></label>
-            <input type="url" id="search-box" placeholder="https//:www.example.com" value="" autocomplete="off">
-            <button type="submit" id="submit-btn">Search</button>
-        </form> 
-    </div>
-    <footer id="footer">Made with 💗 by 
-        <a id="link" href="https://github.com/left-no-crumbz" target="_blank" rel="noopener noreferrer">Crumbz</a>
-    </footer>
+    <div id="content"></div>
 
+    <script src="./js/index.js"></script>
 </body>
-<script src="./js/app.js">
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./js/service-worker.js")
-    }
-</script>
 </html>
