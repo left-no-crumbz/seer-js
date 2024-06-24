@@ -1,0 +1,72 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100svh;
+    color: white;
+}
+:root {
+    --bg-clr: #222222;
+    --sec-clr: #494C5D;
+    --ter-clr: #1b87ea;
+}
+
+
+.container {
+    background-color: var(--bg-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+#form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sec-clr);
+    border-radius: 0.75rem;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#cache, #url, button{
+    height: 35px;
+    width: 70%;
+    border-radius: 0.75rem;
+    border: 0;
+}
+
+
+#url {
+    padding: .5rem;
+}
+
+button {
+    font-weight: 700;
+    color: white;
+    background-color: var(--ter-clr);
+}
+.label-input {
+    gap: .3rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+label {
+    font-weight: 700;
+    line-height: 2rem;
+}

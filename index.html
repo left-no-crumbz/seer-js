@@ -7,10 +7,26 @@
     <link href="./css/styles.css" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
+    <script defer async src="./js/index.js"></script>
 </head>
 <body>
-    <div id="content"></div>
 
-    <script src="./js/index.js"></script>
+    <div class="container">
+        <form id=form action="https://archive.is/submit/?url=" method="get">
+            
+            <h1>Seer JS</h1>
+            <div class="label-input">
+                <label for="url">URL</label>
+                <input id=url type="url" placeholder="www.example.com" name="url" >
+            </div>
+
+            <select name="cache" id="cache">
+                <option value="Google Cache" selected>Google Cache</option>
+                <option value="Archive.is">Archive.is</option>
+            </select>
+
+            <button type="submit">Enter</button>
+        </form>
+    </div>
 </body>
 </html>
