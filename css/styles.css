@@ -60,6 +60,7 @@ button {
     font-weight: 700;
     color: white;
     background-color: var(--ter-clr);
+    cursor: pointer;
 }
 
 .label-input {

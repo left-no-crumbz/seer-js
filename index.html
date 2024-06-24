@@ -6,28 +6,46 @@
     <title>Seer</title>
     <link href="./css/styles.css" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000">
-    <script defer async src="./js/index.js"></script>
 </head>
 <body>
-
     <div class="container">
-        <form id=form action="https://archive.is/submit/?url=" method="get">
-            
+        <form id="form" action="" method="get" target="_blank">
             <h1>Seer JS</h1>
             <div class="label-input">
                 <label for="url">URL</label>
-                <input id=url type="url" placeholder="www.example.com" name="url" >
+                <input id="url" type="url" placeholder="www.example.com" name="url">
             </div>
 
             <select name="cache" id="cache">
-                <option value="Google Cache" selected>Google Cache</option>
-                <option value="Archive.is">Archive.is</option>
+                <option value="https://webcache.googleusercontent.com/search?q=cache:">Google Cache</option>
+                <option value="https://archive.is/submit/?url=">Archive.is</option>
             </select>
 
-            <button type="submit">Enter</button>
+            <button id="submit" type="submit">Enter</button>
         </form>
         <footer>Made with ♥ by Crumbz</footer>
     </div>
+
+    <script>
+        const form = document.getElementById("form");
+        const submitBtn = document.getElementById("submit");
+        const url = encodeURI(document.getElementById("url").value);
+        const cache = document.getElementById("cache");
+
+        let selectedCache = cache.value;
+
+        form.action = `${selectedCache}${url}`;
+        
+
+        document.getElementById("cache").onchange = function () {
+            selectedCache = this.value;
+            form.action = `${selectedCache}${url}`;
+        };
+
+        submitBtn.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            form.submit();
+        });
+    </script>
 </body>
 </html>
