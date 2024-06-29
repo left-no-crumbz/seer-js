@@ -1,7 +1,7 @@
 {
     "name": "Seer",
     "short_name": "Seer",
-    "start_url": "/?home=true",
+    "start_url": "https://left-no-crumbz.github.io/seer-js/",
     "icons": [
         {
           "src": "icons/manifest-icon-192.maskable.png",
