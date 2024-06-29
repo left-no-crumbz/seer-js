@@ -31,6 +31,15 @@
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register("./service-worker.js");
         }
+        window.addEventListener('load', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sharedUrl = urlParams.get('url');
+        if (sharedUrl) {
+            document.getElementById('url').value = sharedUrl;
+            document.getElementById('cache').value = 'https://archive.is/submit/?url=';
+            form.action = `https://archive.is/submit/?url=${encodeURIComponent(sharedUrl)}`;
+        }
+        });
         const form = document.getElementById("form");
         const submitBtn = document.getElementById("submit");
         const url = encodeURI(document.getElementById("url").value);
