@@ -28,6 +28,9 @@
     </div>
 
     <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
         const form = document.getElementById("form");
         const submitBtn = document.getElementById("submit");
         const url = encodeURI(document.getElementById("url").value);
