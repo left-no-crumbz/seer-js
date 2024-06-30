@@ -29,7 +29,7 @@
         }
     ],
     "share_target": {
-        "action": "/index.html",
+        "action": "https://archive.is/submit/?",
         "method": "GET",
         "params": {
             "url": "url"
