@@ -1,5 +1,5 @@
 self.addEventListener('fetch', (event) => {
-    if (event.request.url.includes('/share-target/')) {
+    if (event.request.url.includes('/seer-js/share-target/')) {
       event.respondWith(
         (async () => {
           const formData = await event.request.formData();

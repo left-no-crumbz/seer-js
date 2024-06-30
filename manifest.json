@@ -29,7 +29,7 @@
         }
     ],
     "share_target": {
-        "action": "/share-target/",
+        "action": "/seer-js/share-target/",
         "method": "GET",
         "enctype": "application/x-www-form-urlencoded",
         "params": {
