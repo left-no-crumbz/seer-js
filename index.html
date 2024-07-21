@@ -18,7 +18,7 @@
             </div>
 
             <select name="cache" id="cache">
-                <option value="https://webcache.googleusercontent.com/search?q=cache:">Google Cache</option>
+                <option value="google">Google Cache</option>
                 <option value="https://archive.is/submit/?url=">Archive.is</option>
             </select>
 
@@ -32,34 +32,23 @@
             navigator.serviceWorker.register("./service-worker.js");
         }
         
-        window.addEventListener('load', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const sharedUrl = urlParams.get('url');
-        if (sharedUrl) {
-            document.getElementById('url').value = sharedUrl;
-            document.getElementById('cache').value = 'https://archive.is/submit/?url=';
-            form.action = `https://archive.is/submit/?url=${encodeURIComponent(sharedUrl)}`;
-        }
-        });
-        
         const form = document.getElementById("form");
-        const submitBtn = document.getElementById("submit");
-        const url = encodeURI(document.getElementById("url").value);
+        const urlInput = document.getElementById("url");
         const cache = document.getElementById("cache");
 
-        let selectedCache = cache.value;
-
-        form.action = `${selectedCache}${url}`;
-        
-
-        document.getElementById("cache").onchange = function () {
-            selectedCache = this.value;
-            form.action = `${selectedCache}${url}`;
-        };
-
-        submitBtn.addEventListener("mousedown", (event) => {
+        form.addEventListener("submit", (event) => {
             event.preventDefault();
-            form.submit();
+            const url = urlInput.value;
+            const selectedCache = cache.value;
+            
+            let finalUrl;
+            if (selectedCache === "google") {
+                finalUrl = `https://webcache.googleusercontent.com/search?q=cache:${encodeURIComponent(url)}`;
+            } else {
+                finalUrl = `${selectedCache}${encodeURIComponent(url)}`;
+            }
+            
+            window.open(finalUrl, '_blank');
         });
     </script>
 </body>
